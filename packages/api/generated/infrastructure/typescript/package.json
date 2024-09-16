@@ -3,6 +3,7 @@
   "scripts": {
     "build": "npx projen build",
     "compile": "npx projen compile",
+    "create-openapitools.json": "npx projen create-openapitools.json",
     "default": "npx projen default",
     "generate": "npx projen generate",
     "package": "npx projen package",
@@ -14,19 +15,18 @@
     "watch": "npx projen watch"
   },
   "devDependencies": {
-    "@aws/pdk": "0.23.0",
-    "@types/aws-lambda": "^8.10.131",
+    "@aws/pdk": "0.23.48",
+    "@types/aws-lambda": "^8.10.145",
     "@types/node": "^18",
-    "aws-cdk-lib": "2.118.0",
-    "cdk-nag": "2.28.6",
+    "aws-cdk-lib": "2.158.0",
+    "cdk-nag": "2.28.195",
     "constructs": "10.3.0",
-    "projen": "^0.79.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.6.2"
   },
   "peerDependencies": {
-    "@aws/pdk": "^0.22.49",
-    "aws-cdk-lib": "^2.118.0",
-    "cdk-nag": "^2.28.6",
+    "@aws/pdk": "^0.23.48",
+    "aws-cdk-lib": "^2.158.0",
+    "cdk-nag": "^2.28.195",
     "constructs": "^10.3.0"
   },
   "dependencies": {

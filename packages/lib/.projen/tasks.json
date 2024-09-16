@@ -31,10 +31,37 @@
     },
     "install": {
       "name": "install",
-      "description": "Install and upgrade dependencies",
+      "description": "Install dependencies and update lockfile",
+      "env": {
+        "PYTHON_VERSION": "$(pyenv latest 3 | cut -d '.' -f 1,2 || echo '')"
+      },
       "steps": [
         {
+          "exec": "poetry env use python$PYTHON_VERSION"
+        },
+        {
           "exec": "poetry update"
+        },
+        {
+          "exec": "rm -f `poetry env info -p`/bin/projen `poetry env info -p`/bin/pdk"
+        }
+      ]
+    },
+    "install:ci": {
+      "name": "install:ci",
+      "description": "Install dependencies with frozen lockfile",
+      "env": {
+        "PYTHON_VERSION": "$(pyenv latest 3 | cut -d '.' -f 1,2 || echo '')"
+      },
+      "steps": [
+        {
+          "exec": "poetry env use python$PYTHON_VERSION"
+        },
+        {
+          "exec": "poetry check --lock && poetry install"
+        },
+        {
+          "exec": "rm -f `poetry env info -p`/bin/projen `poetry env info -p`/bin/pdk"
         }
       ]
     },

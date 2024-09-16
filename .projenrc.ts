@@ -37,7 +37,7 @@ const api = new TypeSafeApiProject({
     language: ModelLanguage.OPENAPI,
     options: {
       openapi: {
-        title: "AWS Docs API",
+        title: "AWSDocsAPI",
       },
     },
   },
@@ -172,6 +172,7 @@ const copyApiDocs = webapp.addTask("copy:api-docs");
 copyApiDocs.exec("rm -rf public/api-docs");
 copyApiDocs.exec("mkdir -p public/api-docs");
 copyApiDocs.exec(`cp -r ${path.relative(webapp.outdir, api.documentation.htmlRedoc!.outdir)}/index.html public/api-docs/index.html`);
+webapp.preCompileTask.reset();
 webapp.preCompileTask.spawn(copyApiDocs);
 monorepo.addImplicitDependency(webapp, api.documentation.htmlRedoc!);
 

@@ -61,6 +61,13 @@
         "cwd": "packages/api/generated/runtime/python"
       }
     },
+    "install:ci": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm dlx projen install:ci",
+        "cwd": "packages/api/generated/runtime/python"
+      }
+    },
     "publish:test": {
       "executor": "nx:run-commands",
       "options": {
@@ -72,6 +79,13 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "pnpm dlx projen publish",
+        "cwd": "packages/api/generated/runtime/python"
+      }
+    },
+    "create-openapitools.json": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm dlx projen create-openapitools.json",
         "cwd": "packages/api/generated/runtime/python"
       }
     },

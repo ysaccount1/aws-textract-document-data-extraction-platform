@@ -82,7 +82,8 @@ dmypy.json
 .pytype/
 cython_debug/
 !/.openapi-generator-ignore
-!/openapitools.json
+!/.pdk/dynamic-files/openapitools.json
+/openapitools.json
 aws_document_extraction_platform_api_python_runtime
 docs
 README.md

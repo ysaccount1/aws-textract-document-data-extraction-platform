@@ -51,6 +51,13 @@
         "cwd": "packages/api/generated/documentation/html_redoc"
       }
     },
+    "create-openapitools.json": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm dlx projen create-openapitools.json",
+        "cwd": "packages/api/generated/documentation/html_redoc"
+      }
+    },
     "generate": {
       "executor": "nx:run-commands",
       "options": {

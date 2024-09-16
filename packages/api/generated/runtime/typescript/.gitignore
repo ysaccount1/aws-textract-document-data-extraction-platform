@@ -36,7 +36,8 @@ jspm_packages/
 /dist/
 !/.npmignore
 !/.openapi-generator-ignore
-!/openapitools.json
+!/.pdk/dynamic-files/openapitools.json
+/openapitools.json
 src
 .npmignore
 README.md
