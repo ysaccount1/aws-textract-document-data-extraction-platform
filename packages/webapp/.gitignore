@@ -43,4 +43,5 @@ public/*/api.json
 !/.eslintrc.json
 /build/
 !/project.json
+public/pdf.worker.min.mjs
 !/LICENSE

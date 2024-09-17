@@ -12,7 +12,10 @@ import {
 } from "aws-northstar";
 import Grid from "aws-northstar/layouts/Grid";
 import React, { useCallback, useRef, useState } from "react";
-import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
+import { Document, Page, pdfjs } from "react-pdf";
+
+pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
+
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 export type DrawingFunction = (

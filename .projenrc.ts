@@ -121,7 +121,7 @@ const webapp = new CloudscapeReactTsWebsiteProject({
     "@aws-amplify/ui-react@1.2.5",
     "aws-northstar",
     "aws4fetch",
-    "react-pdf@^5",
+    "react-pdf@^9",
     "react-ace@^10",
     "ace-builds@^1",
     "@material-ui/icons@^4",
@@ -135,7 +135,7 @@ const webapp = new CloudscapeReactTsWebsiteProject({
     "@types/humanize-duration",
     "react-app-rewired@^2",
     "@types/react-router-dom",
-    "@types/react-pdf@^5",
+    "@types/react-pdf@^7",
   ],
 });
 configureTsProject(webapp);
@@ -186,10 +186,14 @@ const copyApiDocs = webapp.addTask("copy:api-docs");
 copyApiDocs.exec("rm -rf public/api-docs");
 copyApiDocs.exec("mkdir -p public/api-docs");
 copyApiDocs.exec(`cp -r ${path.relative(webapp.outdir, api.documentation.htmlRedoc!.outdir)}/index.html public/api-docs/index.html`);
-webapp.preCompileTask.reset();
-webapp.preCompileTask.spawn(copyApiDocs);
+
 monorepo.addImplicitDependency(webapp, api.documentation.htmlRedoc!);
 
+webapp.preCompileTask.reset();
+webapp.preCompileTask.spawn(copyApiDocs);
+
+webapp.preCompileTask.exec(`cp ${path.relative(webapp.outdir, path.join(require.resolve('pdfjs-dist'), "..", "pdf.worker.min.mjs"))} public/pdf.worker.min.mjs`);
+webapp.gitignore.addPatterns("public/pdf.worker.min.mjs");
 
 const infra = new InfrastructureTsProject({
   parent: monorepo,

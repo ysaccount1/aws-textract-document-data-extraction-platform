@@ -36,7 +36,7 @@
     },
     {
       "name": "@types/react-pdf",
-      "version": "^5",
+      "version": "^7",
       "type": "build"
     },
     {
@@ -186,7 +186,7 @@
     },
     {
       "name": "react-pdf",
-      "version": "^5",
+      "version": "^9",
       "type": "runtime"
     },
     {
