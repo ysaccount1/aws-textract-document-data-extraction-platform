@@ -19,12 +19,26 @@ const monorepo = new MonorepoTsProject({
 configureTsProject(monorepo);
 
 monorepo.package.addPackageResolutions(
-  "fast-xml-parser@^4.2.5",
+  "fast-xml-parser@^4.4.1",
   "nth-check@^2.0.1",
   "semver@^7.5.2",
-  "axios@^1.6.0",
+  "axios@^1.7.4",
   "postcss@^8.4.31",
+  "braces@^3.0.3",
+  "ws@^8.17.1",
+  "webpack-dev-middleware@^5.3.4",
+  "body-parser@^1.20.3",
+  "dompurify@^3.1.3",
+  "express@^4.19.2",
+  "follow-redirects@^1.15.6",
+  "ejs@^3.1.10",
+  "webpack@^5.94.0",
+  "send@^0.19.0",
+  "serve-static@^1.16.0",
+  "micromatch@^4.0.8",
 );
+
+monorepo.package.file.addOverride("pnpm.overrides.path-to-regexp@^1", "^1.9.0");
 
 const api = new TypeSafeApiProject({
   parent: monorepo,
