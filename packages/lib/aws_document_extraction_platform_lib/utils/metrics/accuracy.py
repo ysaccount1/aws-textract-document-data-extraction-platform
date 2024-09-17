@@ -72,9 +72,9 @@ def _compute_extraction_accuracy_percentage(
         fieldDistancePercentage=float(
             fuzz.ratio(str(original_extracted_data), str(reviewed_extracted_data))
         ),
-        fieldCorrectnessPercentage=100.0
-        if original_extracted_data == reviewed_extracted_data
-        else 0.0,
+        fieldCorrectnessPercentage=(
+            100.0 if original_extracted_data == reviewed_extracted_data else 0.0
+        ),
     )
 
 

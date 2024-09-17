@@ -2,7 +2,7 @@
   "dependencies": [
     {
       "name": "black",
-      "version": "^22",
+      "version": "^24",
       "type": "devenv"
     },
     {

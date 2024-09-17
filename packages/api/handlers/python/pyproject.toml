@@ -28,7 +28,7 @@ include = [
     develop = true
 
 [tool.poetry.group.dev.dependencies]
-black = "^22"
+black = "^24"
 licenseheaders = "0.8.8"
 pytest = "7.4.3"
 

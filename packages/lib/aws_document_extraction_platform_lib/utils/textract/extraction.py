@@ -441,9 +441,11 @@ def _extract_schema_fields(
             data=object_data,
             metadata=object_metadata,
             found_any_field=found_any_field,
-            average_confidence=statistics.mean(object_confidences)
-            if len(object_confidences) > 0
-            else 0,
+            average_confidence=(
+                statistics.mean(object_confidences)
+                if len(object_confidences) > 0
+                else 0
+            ),
         )
 
     elif schema.type_of == "array":
@@ -472,9 +474,9 @@ def _extract_schema_fields(
             data=list_data,
             metadata=list_metadata,
             found_any_field=len(list_data) > 0,
-            average_confidence=statistics.mean(list_confidences)
-            if len(list_confidences) > 0
-            else 0,
+            average_confidence=(
+                statistics.mean(list_confidences) if len(list_confidences) > 0 else 0
+            ),
         )
 
     # Primitive type (string, int etc)

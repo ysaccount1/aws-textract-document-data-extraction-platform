@@ -272,13 +272,17 @@ class Store(Generic[Document]):
     ) -> Dict:
         now = utc_now()
         metadata = {
-            "createdBy": user
-            if existing_document_dict is None
-            else existing_document_dict["createdBy"],
+            "createdBy": (
+                user
+                if existing_document_dict is None
+                else existing_document_dict["createdBy"]
+            ),
             "updatedBy": user,
-            "createdTimestamp": now
-            if existing_document_dict is None
-            else existing_document_dict["createdTimestamp"],
+            "createdTimestamp": (
+                now
+                if existing_document_dict is None
+                else existing_document_dict["createdTimestamp"]
+            ),
             "updatedTimestamp": now,
         }
         return {

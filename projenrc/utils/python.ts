@@ -3,7 +3,7 @@ import { PythonProject } from "projen/lib/python";
 
 
 export const configurePyProject = (project: PythonProject) => {
-  project.addDevDependency("black@^22");
+  project.addDevDependency("black@^24");
   project.addDevDependency("licenseheaders@0.8.8");
 
   const licenseHeader = path.join(path.relative(project.outdir, project.parent!.outdir), "header.txt");

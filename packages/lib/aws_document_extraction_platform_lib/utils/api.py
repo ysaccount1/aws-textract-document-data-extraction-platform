@@ -23,8 +23,7 @@ class CallingUser:
 DefaultCallingUser: CallingUser = CallingUser(username="unknown")
 
 
-class UnauthorizedException(Exception):
-    ...
+class UnauthorizedException(Exception): ...
 
 
 def _get_cognito_authenticated_caller(
